@@ -1,0 +1,5 @@
+dnprock/vida_io_image:
+  Type: NodeJS
+  OS: Ubuntu
+  Exec:
+    - 'exec /usr/bin/node app.js'
