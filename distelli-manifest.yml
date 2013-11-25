@@ -1,6 +1,7 @@
 dnprock/vida_io_image:
   Type: NodeJS
   OS: Ubuntu
-  Exec:
+  Env:
     - PORT: 8082
+  Exec:
     - 'exec /usr/bin/node app.js'
