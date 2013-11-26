@@ -23,7 +23,11 @@
     
     $('#view-image').addClass('active');
     
+    $('#view-image').attr("disabled", "disabled")
+    
     $.get(api_link, function(data) {
+      $('#view-image').removeAttr("disabled");
+      
       $('#view-image').removeClass('active');
       var img = $('<img>');
       img.attr('src', 'data:image/png;base64, ' + data.image_data);
