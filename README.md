@@ -1,3 +1,9 @@
+# VIDA.IO Image Server
+
+Generate png from svg and website. See: http://image.vida.io/
+
+Deployment with [distelli](http://www.distelli.com/).
+
 # Banquo server
 
 Banquo server is a Node Express.js server set to run the [Banquo](http://github.com/mhkeller/banquo) library as a service.
