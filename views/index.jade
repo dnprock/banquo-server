@@ -2,4 +2,50 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}. <a href="http://github.com/ajam/banquo-server" target="_blank">View source</a>.
+  p Generate svg, website screenshot.
+  
+  h3 Get image
+  
+  p Use this form to generate image of your URL.
+  
+  form(role="form")
+    div(class="form-group")
+      label URL of page to get image
+      input(type="text", class="form-control", name="url", value="https://vida.io/documents/WgBMc4zDWF7YpqXGR")
+  
+    div(class="form-group")
+      label Viewport width of browser
+      input(type="text", class="form-control", name="viewport_width", value="1000")
+    
+    div(class="form-group")
+      label Wait time in miliseconds for page to fully load
+      input(type="text", class="form-control", name="delay", value="5000")
+    
+    div(class="form-group")
+      label The div you want to screenshot
+      input(type="text", class="form-control", name="selector", value="div#canvas")
+    
+    div(class="form-group")
+      button(type="button", class="btn btn-primary has-spinner" id="view-image")
+        span.spinner
+          i.fa.fa-spinner.fa-spin
+        | View Image
+    
+    div(id="image_preview")
+    
+    div(class="form-group")
+      button(type="button", class="btn btn-primary" id="generate-url") Generate URL
+  
+    div(id="image_url")
+      a(href="http://image.vida.io/api/" id="image_url_link")
+  
+  h3 JSONP
+  
+  p <a href="http://github.com/dnprock/banquo-server" target="_blank">Go here to see more info about JSONP.</a>
+  
+  p Question? Send us an email <a href="mailto:contact@vida.io">contact@vida.io</a>.
+  
+  p Operated by vida.io. <a href="http://github.com/dnprock/banquo-server" target="_blank">View source</a>.
+  
+  p Original server from Al Jazeera America. <a href="http://github.com/ajam/banquo-server" target="_blank">View source</a>.
+  
