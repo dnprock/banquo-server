@@ -10,20 +10,20 @@ block content
   
   form(role="form")
     div(class="form-group")
-      label URL of page to get image
+      label URL of page to a screen shot (required)
       input(type="text", class="form-control", name="url", value="https://vida.io/embed/WgBMc4zDWF7YpqXGR")
   
     div(class="form-group")
-      label Viewport width of browser
-      input(type="text", class="form-control", name="viewport_width", value="1000")
+      label Viewport width of browser (default: 1440)
+      input(type="text", class="form-control", name="viewport_width", placeholder="1440")
     
     div(class="form-group")
-      label Wait time in miliseconds for page to fully load
-      input(type="text", class="form-control", name="delay", value="5000")
+      label Wait time to fully load the page in miliseconds (default: 5000)
+      input(type="text", class="form-control", name="delay", placeholder="5000")
     
     div(class="form-group")
-      label The div you want to screenshot
-      input(type="text", class="form-control", name="selector", value="div#canvas")
+      label HTML selector for screenshot (default: body)
+      input(type="text", class="form-control", name="selector", placeholder="Example: #canvas")
     
     div(class="form-group")
       button(type="button", class="btn btn-primary has-spinner" id="view-image")
