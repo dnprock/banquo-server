@@ -38,7 +38,8 @@
     $.get(api_link, function(data) {
       setViewImageBtn(false)
       var img = $('<img>');
-      img.attr('src', 'data:image/png;base64, ' + data.image_data);
+      img.attr('id', 'result-screenshot')
+      img.attr('src', 'data:image/png;base64, ' + data.image_data);      
       $('#image_preview').append(img);
     });
   }
