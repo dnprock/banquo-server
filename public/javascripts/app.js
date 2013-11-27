@@ -30,7 +30,7 @@
     $.ajaxSetup({
       error: function(xhr, status, error) {
         $('#error-message').slideToggle(250)
-        console.log("An AJAX error occured: " + status + "\nError: " + error);
+        $('#error-content').text("Error: " + error)
         setViewImageBtn(false)
       }
     });
