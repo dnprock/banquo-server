@@ -1,55 +1,84 @@
 extends layout
 
 block content
-  h1= title
-  p Generate png for svg and website. We use this @ <a href="https://vida.io/">vida.io</a>.
+
+  #wrap
+    //
+       Begin page content 
+    .container
+      .page-header
+        h2
+          | <a href="https://vida.io/" class="logo">VIDA.IO</a> -  
+          = title
+      
+      h5 Generate PNG for SVG and website.
   
-  h3 Get image
+      
+      h3 Image Generation from URL
   
-  p Use this form to generate image of your URL.
+      .row
+        .col-md-9
+          .form-group
+            label Page URL
+            input(type="text", class="form-control", name="url", value="https://vida.io/documents/WgBMc4zDWF7YpqXGR?_escaped_fragment_")
   
-  form(role="form")
-    div(class="form-group")
-      label URL of page to a screen shot (required)
-      input(type="text", class="form-control", name="url", value="https://vida.io/documents/WgBMc4zDWF7YpqXGR?_escaped_fragment_")
+      .row
+        .col-md-2
+          .form-group
+            label Viewport Width
+            input(type="text", class="form-control", name="viewport_width", value="980")
+          .form-group
+            label Viewport Height
+            input(type="text", class="form-control", name="viewport_height", value="900")
+        
+        .col-md-3
+          .form-group
+            label Page Load Wait Time (ms)
+            input(type="text", class="form-control", name="delay", value="5000")
+    
+          .form-group
+            label HTML Selector (Ex: #canvas)
+            input(type="text", class="form-control", name="selector", value="#canvas")
   
-    div(class="form-group")
-      label Viewport width of browser
-      input(type="text", class="form-control", name="viewport_width", value="980")
-    
-    div(class="form-group")
-      label Wait time to fully load the page in miliseconds 
-      input(type="text", class="form-control", name="delay", value="5000")
-    
-    div(class="form-group")
-      label HTML selector for screenshot (Example: #canvas)
-      input(type="text", class="form-control", name="selector", value="#canvas")
-    
-    div(class="form-group")
-      button(type="button", class="btn btn-primary has-spinner" id="view-image")
-        span.spinner
-          i.fa.fa-spinner.fa-spin
-        | View Image
-    
-    div(id="error-message")
-      div(class="alert alert-danger")
-        span(id="error-content")
+      .row
+        .col-md-2
+          button(type="button", class="btn btn-primary has-spinner" id="view-image")
+            span.spinner
+              i.fa.fa-spinner.fa-spin
+            | View Image
+
+        .col-md-2  
+          button#generate-url.btn.btn-primary(data-target="#modalImageURL", role="button", data-toggle="modal") Generate URL
+      
+      #error-message
+        div(class="alert alert-danger")
+          span(id="error-content")
+  
+      #image_preview
+  
+      #modalImageURL.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+              h4.modal-title Image Generation URL
+        
+            .modal-body
+              .image_url
+                a(href="http://image.vida.io/api/" id="image_url_link" target="_blank", style="word-wrap: break-word;")
           
-    div(id="image_preview")
+            .modal-footer
+              button.btn.btn-default(type='button', data-dismiss='modal') Close
+      
+      br
     
-    div(class="form-group")
-      button(type="button", class="btn btn-primary" id="generate-url") Generate URL
-  
-    div(id="image_url")
-      a(href="http://image.vida.io/api/" id="image_url_link" target="_blank")
-  
-  h3 Calling image.vida.io from your site
-  
-  p <a href="http://github.com/dnprock/banquo-server" target="_blank">Go here to see more info about JSONP</a>.
-  
-  p Question? Send us an email <a href="mailto:contact@vida.io">contact@vida.io</a>.
-  
-  p Operated by <a href="https://vida.io/" target="_blank">vida.io</a>. <a href="http://github.com/dnprock/banquo-server" target="_blank">View source</a>.
-  
-  p Original server from Al Jazeera America. <a href="http://github.com/ajam/banquo-server" target="_blank">View source</a>.
-  
+      h3 Using 'image.vida.io' for your site
+
+      p <a href="http://github.com/dnprock/banquo-server" target="_blank">Go here to see more info about JSONP</a>
+      
+  #footer
+    .container
+      .row
+        .col-md-12
+          h6 Question? Send us an email <a href="mailto:contact@vida.io">contact@vida.io</a>
+          h6 <a href="http://github.com/dnprock/banquo-server" target="_blank">Source Code</a> (Forked from <a href="http://github.com/ajam/banquo-server" target="_blank">Banquo Server</a> of Al Jazeera America)

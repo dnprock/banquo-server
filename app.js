@@ -9,7 +9,7 @@ var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var banquo = require('banquo');
-var config = require('./config.json')
+var config = require('./config.json');
 
 var AWS,
     s3;
