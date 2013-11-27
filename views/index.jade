@@ -11,7 +11,7 @@ block content
   form(role="form")
     div(class="form-group")
       label URL of page to a screen shot (required)
-      input(type="text", class="form-control", name="url", value="https://vida.io/embed/WgBMc4zDWF7YpqXGR")
+      input(type="text", class="form-control", name="url", value="https://vida.io/documents/WgBMc4zDWF7YpqXGR?_escaped_fragment_")
   
     div(class="form-group")
       label Viewport width of browser
@@ -31,6 +31,10 @@ block content
           i.fa.fa-spinner.fa-spin
         | View Image
     
+    div(id="error-message")
+      div(class="alert alert-warning")
+        p An error has occurred
+          
     div(id="image_preview")
     
     div(class="form-group")

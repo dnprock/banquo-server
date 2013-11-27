@@ -21,21 +21,40 @@
     
     $('#image_preview').html('');
     
-    $('#view-image').addClass('active');
+    setViewImageBtn(true);   
     
-    $('#view-image').attr("disabled", "disabled")
+    if ($('#error-message').is(":visible")) {
+      $('#error-message').hide()
+    }
+    
+    $.ajaxSetup({
+      error: function(xhr, status, error) {
+        $('#error-message').slideToggle(250)
+        console.log("An AJAX error occured: " + status + "\nError: " + error);
+        setViewImageBtn(false)
+      }
+    });
     
     $.get(api_link, function(data) {
-      $('#view-image').removeAttr("disabled");
-      
-      $('#view-image').removeClass('active');
+      setViewImageBtn(false)
       var img = $('<img>');
       img.attr('src', 'data:image/png;base64, ' + data.image_data);
       $('#image_preview').append(img);
-    })
+    });
+  }
+  
+  function setViewImageBtn(active) {
+    if (active) {
+      $('#view-image').attr("disabled", "disabled");
+      $('#view-image').addClass('active');    
+    } else {
+      $('#view-image').removeAttr("disabled");      
+      $('#view-image').removeClass('active');
+    }
   }
   
   $( document ).ready(function() {
+    $('#error-message').hide()
     $('#generate-url').click(function() {
       var api_link = generate_url();
       $('#image_url_link').attr('href', api_link);
