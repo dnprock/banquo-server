@@ -21,7 +21,7 @@ var error_msgs =  {
 	"domain": "You are attempting to access this server from an unauthorized domain. To install this service on your own server, see it on Github: http://github.com/ajam/banquo-server"
 }
 
-var opts_whitelist = ["mode", "url", "viewport_width", "delay", "selector", "css_hide", "css_file", "out_file"];
+var opts_whitelist = ["mode", "url", "viewport_width", "viewport_height", "delay", "selector", "css_hide", "css_file", "out_file"];
 
 // all environments
 app.set('port', process.env.PORT || 3000);

@@ -1,16 +1,18 @@
 (function(){
   function generate_url() {
-    var url = $('input[name=url]').val();
-    var viewport_width = $('input[name=viewport_width]').val();
-    var delay = $('input[name=delay]').val();
-    var selector = $('input[name=selector]').val();
-    
+    var url = $('input#url').val(),
+        viewport_width = $('input#viewport_width').val(),
+        viewport_height = $('input#viewport_height').val(),
+        delay = $('input#delay').val(),
+        selector = $('input#selector').val()
+        
     var opts = '';
-    opts = opts + ((viewport_width !== '') ? 'viewport_width=' + viewport_width : '');
-    opts = opts + ((delay !== '') ? '&delay=' + delay : '');
-    opts = opts + ((selector !== '') ? '&selector=' + encodeURIComponent(selector) : '');
+    opts += ((viewport_width  !== '') ? 'viewport_width='   + viewport_width : '');
+    opts += ((viewport_height !== '') ? '&viewport_height=' + viewport_height : '');
+    opts += ((delay !== '') ? '&delay=' + delay : '');
+    opts += ((selector !== '') ? '&selector=' + encodeURIComponent(selector) : '');
     
-    var api_link = 'http://' + document.location.host + '/api/' + encodeURIComponent($('input[name=url]').val()) +
+    var api_link = 'http://' + document.location.host + '/api/' + encodeURIComponent($('input#url').val()) +
           (opts !== '' ? '/' + opts : '');
     
     return api_link;
