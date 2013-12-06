@@ -21,10 +21,10 @@ var error_msgs =  {
 	"domain": "You are attempting to access this server from an unauthorized domain. To install this service on your own server, see it on Github: http://github.com/ajam/banquo-server"
 }
 
-var opts_whitelist = ["mode", "url", "viewport_width", "viewport_height", "delay", "selector", "css_hide", "css_file", "out_file"];
+var opts_whitelist = ["mode", "url", "viewport_width", "viewport_height", "delay", "selector", "css_hide", "css_file", "out_file", "trim"];
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.favicon());
