@@ -11,6 +11,7 @@
     "node-phantom": "~0.2.5",
     "underscore": "~1.5.2",
     "banquo": "https://github.com/dnprock/banquo/tarball/master",
-    "aws-sdk": ">=1.10.0"
+    "aws-sdk": ">=1.10.0",
+    "exec-sync": "0.1.6"
   }
 }
