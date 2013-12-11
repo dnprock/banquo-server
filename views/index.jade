@@ -30,9 +30,7 @@ block content
           .form-group
             label Viewport Height
             input#viewport_height.form-control(type="text", value="900")
-          .form-group
-            label.checkbox Trim Whitespace
-              input#trim(type="checkbox")
+          
         
         .col-md-3
           .form-group
@@ -43,7 +41,15 @@ block content
             label HTML Selector (Ex: #canvas)
             input#selector.form-control(type="text", value="#canvas")
        
-  
+        .col-md-3
+          .form-group
+            label.checkbox(style="margin:0 auto;") Thumbnail
+              input#thumbnail(type="checkbox")
+            input#dimension.form-control(type="text", placeholder="Dimension: default 256x144")
+            
+          .form-group
+            label.checkbox(style="margin:0 auto;") Trim Whitespace
+              input#trim(type="checkbox")
       .row
         .col-md-2
           button(type="button", class="btn btn-primary has-spinner" id="view-image")

@@ -4,8 +4,10 @@
         viewport_width = $('input#viewport_width').val(),
         viewport_height = $('input#viewport_height').val(),
         delay = $('input#delay').val(),
-        selector = $('input#selector').val()
-        trim = $('input#trim').is(':checked')
+        selector = $('input#selector').val(),
+        trim = $('input#trim').is(':checked'),
+        thumbnail = $('input#thumbnail').is(':checked'),
+        dimension = $('input#dimension').val()
         
     var opts = '';
     opts += ((viewport_width  !== '') ? 'viewport_width='   + viewport_width : '');
@@ -13,6 +15,8 @@
     opts += ((delay !== '') ? '&delay=' + delay : '');
     opts += ((selector !== '') ? '&selector=' + encodeURIComponent(selector) : '');
     opts += ((trim === true) ? '&trim=1' : '');
+    opts += ((thumbnail === true) ? '&thumbnail=1' : '');
+    opts += ((dimension !== '') ? '&dimension=' + encodeURIComponent(dimension) : '');
     
     var api_link = 'http://' + document.location.host + '/api/' + encodeURIComponent($('input#url').val()) +
           (opts !== '' ? '/' + opts : '');
