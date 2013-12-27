@@ -96,6 +96,9 @@ viewport_width |no| 1440 | *Number (pixels)* | The desired browser width. Settin
 delay |no| 1000 | *Number (milliseconds)* | How long to wait after the page has loaded before taking the screenshot. PhantomJS apparently waits for the page to load but if you have a map or other data calculations going on, you'll need to specify a wait time.
 selector |no| `body` | *URI-component-encoded CSS selector* | The div you want to screenshot.
 css_hide |no| null | *URI-component-encoded CSS selector* | Any divs you want to hide, such as zoom buttons on map.
+trim |no| null | 1 = ON, non-1s: OFF | Allow edge white space triming
+thumbnail |no| null | 1 = ON, non-1s: OFF | Take a thumbnail shot (small size image)
+dimension |no| '256x144' | string | Optional when thumbnail is specified. Image is scaled proportionally based on the larger edge if specifying dimension is not proportional to the under-taking image.
 
 ### The response
 
