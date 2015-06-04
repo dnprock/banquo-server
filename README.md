@@ -1,6 +1,6 @@
 # VIDA.IO Image Server
 
-Generate png from svg and website. See: http://image.vida.io/
+Generate png from svg and website.
 
 Deployment with [distelli](http://www.distelli.com/).
 
